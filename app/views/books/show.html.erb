@@ -4,6 +4,15 @@
   </p>
 <% end %>
 
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>errors prohibited this book from being updated:
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li class="message"><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <p>
   <strong>Title:</strong> 
   <%= @book.title %>
